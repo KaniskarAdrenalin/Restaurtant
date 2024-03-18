@@ -1,0 +1,112 @@
+﻿@model IEnumerable<Restaurtant.Booking>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>BookingView</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookingDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Purpose)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Room.RoomName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookingDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Purpose)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Room.RoomName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BookingID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BookingID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BookingID })
+        </td>
+    </tr>
+}
+
+</table>
+
+<style>
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .table th, .table td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        .table th {
+            background-color: #f2f2f2;
+        }
+
+    .btn {
+        padding: 5px 10px;
+        text-decoration: none;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-info {
+        background-color: #17a2b8;
+        color: white;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        color: white;
+    }
+</style>

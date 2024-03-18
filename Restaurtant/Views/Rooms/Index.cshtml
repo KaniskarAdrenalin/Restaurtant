@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Restaurtant.Room>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>RoomView</h2>
+
+<p>
+    @Html.ActionLink("Create New","Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.User.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Booking.Purpose)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RemainingSpace)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Booking.Purpose)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Capacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RemainingSpace)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.RoomID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.RoomID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.RoomID })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<style>
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .table th, .table td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        .table th {
+            background-color: #f2f2f2;
+        }
+
+</style>

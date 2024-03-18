@@ -1,0 +1,62 @@
+﻿@model Restaurtant.Room
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Room</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Username)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RoomName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Booking.Purpose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Booking.Purpose)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Capacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RemainingSpace)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RemainingSpace)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RoomID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
